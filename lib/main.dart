@@ -12,13 +12,13 @@ class MyHomePage extends StatelessWidget {
     Transaction(
       id: 0001,
       title: 'Shoes',
-      amount: 2500,
+      amount: 59.99,
       date: DateTime.now(),
     ),
     Transaction(
       id: 0002,
       title: 'Sunglasses',
-      amount: 500,
+      amount: 12.99,
       date: DateTime.now(),
     )
   ];
@@ -29,11 +29,11 @@ class MyHomePage extends StatelessWidget {
       title: 'Welcome to Flutter',
       home: Scaffold(
         appBar: AppBar(
-          title: const Text('Welcome to Flutter'),
+          title: Text('Welcome to Flutter'),
         ),
         body: Column(
           children: <Widget>[
-            const Card(
+            Card(
               color: Colors.blue,
               elevation: 5,
               child: SizedBox(
@@ -47,26 +47,45 @@ class MyHomePage extends StatelessWidget {
                     child: Row(
                       children: <Widget>[
                         Container(
-                          margin: const EdgeInsets.symmetric(
+                          margin: EdgeInsets.symmetric(
                             vertical: 15,
                             horizontal: 20,
                           ),
                           decoration: BoxDecoration(
                             border: Border.all(
-                              color: Colors.black,
+                              color: Colors.purple,
                               width: 2,
                             ),
                           ),
                           padding: EdgeInsets.all(10),
                           child: Text(
                             transaction.amount.toString(),
+                            style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                              fontSize: 20,
+                              color: Colors.purple,
+                            ),
                           ), //.toString converts it to a string
                         ),
                         Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
                           children: <Widget>[
-                            Text(transaction.title),
+                            Column(
+                              children: [
+                                Text(
+                                  transaction.title,
+                                  style: TextStyle(
+                                    fontWeight: FontWeight.bold,
+                                    fontSize: 18,
+                                  ),
+                                ),
+                              ],
+                            ),
                             Text(
                               transaction.date.toString(),
+                              style: TextStyle(
+                                color: Colors.grey,
+                              ),
                             ),
                           ],
                         ),
