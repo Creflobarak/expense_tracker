@@ -34,12 +34,37 @@ class MyHomePage extends StatelessWidget {
           title: Text('Welcome to Flutter'),
         ),
         body: Column(
+          // mainAxisAlignment: MainAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.stretch,
           children: <Widget>[
             Card(
               color: Colors.blue,
               elevation: 5,
               child: SizedBox(
                 child: Text('CHART!'),
+              ),
+            ),
+            Card(
+              child: Container(
+                padding: EdgeInsets.all(10),
+                child: Column(
+                  children: <Widget>[
+                    TextField(
+                      decoration: InputDecoration(labelText: 'Title'),
+                    ),
+                    TextField(
+                      decoration: InputDecoration(labelText: 'Amount'),
+                    ),
+                    ElevatedButton(
+                      style: ElevatedButton.styleFrom(
+                        primary: Colors.blue,
+                        onPrimary: Colors.white,
+                      ),
+                      onPressed: () {},
+                      child: Text('Add Transaction'),
+                    )
+                  ],
+                ),
               ),
             ),
             Column(
@@ -55,7 +80,7 @@ class MyHomePage extends StatelessWidget {
                           ),
                           decoration: BoxDecoration(
                             border: Border.all(
-                              color: Colors.purple,
+                              color: Colors.blue,
                               width: 2,
                             ),
                           ),
@@ -65,7 +90,7 @@ class MyHomePage extends StatelessWidget {
                             style: TextStyle(
                               fontWeight: FontWeight.bold,
                               fontSize: 20,
-                              color: Colors.purple,
+                              color: Colors.blue,
                             ),
                           ), //.toString converts it to a string
                         ),
